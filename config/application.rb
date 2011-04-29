@@ -31,7 +31,10 @@ module Todos
     # config.i18n.default_locale = :de
 
     # JavaScript files you want as :defaults (application.js is always included).
-    config.action_view.javascript_expansions[:defaults] = %w()
+    config.action_view.javascript_expansions[:defaults] = %w(
+      https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js
+      rails
+    )
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
