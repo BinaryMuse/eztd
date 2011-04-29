@@ -13,4 +13,19 @@ describe Task do
     task.text = ""
     task.should have(1).error_on(:text)
   end
+
+  context "grouping" do
+    before(:each) do
+      5.times { Factory(:task, :completed => true) }
+      5.times { Factory(:task, :completed => false) }
+    end
+
+    it "should return the correct tasks in the 'completed' scope" do
+      Task.completed.count.should == 5
+    end
+
+    it "should return the correct tasks in the 'uncompleted' scope" do
+      Task.uncompleted.count.should == 5
+    end
+  end
 end
