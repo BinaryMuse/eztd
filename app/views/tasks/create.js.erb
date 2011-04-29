@@ -1,0 +1,8 @@
+<% if @task.completed %>
+  $("#completed").append("<%= escape_javascript render('task', :task => @task) %>");
+<% else %>
+  $("#uncompleted").append("<%= escape_javascript render('task', :task => @task) %>");
+<% end %>
+$("#task_block_<%= @task.id %>").effect('highlight', 500);
+$("#task_text").val("");
+$("#no_tasks").hide();

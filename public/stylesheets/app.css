@@ -1,0 +1,72 @@
+body {
+  margin: 15px 0 0 0;
+  padding: 0;
+  font-family: 'Cabin Sketch', arial, serif;
+  background: url('/images/bg_stripes.gif') 0 0 repeat-x #99ccff;
+}
+
+h1 {
+  margin: 0;
+  font-size: 42pt;
+}
+
+#content {
+  width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.task {
+  width: 500px;
+  margin: 0 auto 5px auto;
+  font-size: 22pt;
+}
+
+.task form {
+  display: inline-block;
+}
+
+.task .text {
+  display: inline-block;
+  width: 400px;
+}
+
+.task .toggler input {
+  width: 20px;
+  height: 20px;
+}
+
+.task .remover {
+  font-size: 16px;
+  color: red;
+  display: none;
+  width: 20px;
+}
+
+.task .remover_placeholder {
+  width: 20px;
+  font-size: 16px;
+  display: inline-block;
+}
+
+#completed .task {
+  color: gray;
+}
+
+#new_task input[type=image] {
+  vertical-align: middle;
+}
+
+form#new_task {
+  margin-bottom: 20px;
+}
+
+form#new_task input#task_text {
+  font-size: 20pt;
+  font-family: 'Cabin Sketch', arial, serif;
+}
+
+form#new_task input#task_submit {
+  width: 75px;
+  height: 35px;
+}

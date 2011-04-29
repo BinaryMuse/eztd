@@ -1,0 +1,6 @@
+$("#tasks #task_block_<%= @task.id %>").hide('highlight', 500, function() {
+  $("#tasks #task_block_<%= @task.id %>").remove();
+  if($("#tasks .task").length == 0) {
+    $("#no_tasks").show();
+  }
+});

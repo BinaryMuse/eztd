@@ -1,0 +1,12 @@
+!!!
+%head
+  %title EZ Todos
+  = stylesheet_link_tag :all
+  = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Cabin+Sketch:bold'
+  = javascript_include_tag :defaults
+  = csrf_meta_tag
+%body
+  #content
+    = render 'shared/heading'
+    = render 'shared/form'
+    = yield

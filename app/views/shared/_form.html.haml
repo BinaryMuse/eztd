@@ -1,0 +1,4 @@
+%div.form
+  = form_for @new_task, :remote => true do |f|
+    = f.text_field :text
+    = image_submit_tag "add_button.png"
