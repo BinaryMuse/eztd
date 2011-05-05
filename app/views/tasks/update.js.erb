@@ -1,6 +1,3 @@
 $("#tasks #task_block_<%= @task.id %>").remove();
-<% if @task.completed %>
-  $("#completed").append("<%= escape_javascript render('task', :task => @task) %>");
-<% else %>
-  $("#uncompleted").append("<%= escape_javascript render('task', :task => @task) %>");
-<% end %>
+<% content = escape_javascript render('task', :task => @task) %>
+$('<%= @task.completed? ? "#completed" : "#uncompleted" %>').append("<%= content %>");

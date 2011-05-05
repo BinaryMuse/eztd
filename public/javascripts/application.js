@@ -12,10 +12,10 @@ $(function() {
   });
 
   $(".task").live({mouseenter: function() {
-    $(this).children('.remover_placeholder').css('display', 'none');
+    // $(this).children('.remover_placeholder').css('display', 'none');
     $(this).children('.remover').css('display', 'inline-block');
   }, mouseleave: function() {
-    $(this).children('.remover_placeholder').css('display', 'inline-block');
+    // $(this).children('.remover_placeholder').css('display', 'inline-block');
     $(this).children('.remover').css('display', 'none');
   }});
 });
