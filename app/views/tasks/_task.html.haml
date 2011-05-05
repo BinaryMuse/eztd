@@ -1,7 +1,8 @@
-.task{:id => "task_block_#{task.id}", :class => task.completed? ? "completed" : "uncompleted" }
+.task{:id => "task_block_#{task.id}", :class => task.completed? ? "completed" : "uncompleted", "data-id" => task.id }
   %span.toggler
     = form_for task, :remote => true do |f|
       = f.check_box :completed
+      = f.hidden_field :ordering
   %span.text
     = task.text
   %span.remover

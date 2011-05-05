@@ -28,4 +28,37 @@ describe Task do
       Task.uncompleted.count.should == 5
     end
   end
+
+  context "ordering" do
+    before(:each) do
+      @t1 = Factory(:task, :ordering => 0)
+      @t2 = Factory(:task, :ordering => 1)
+      @t3 = Factory(:task, :ordering => 2)
+      @t4 = Factory(:task, :ordering => 3)
+      @t5 = Factory(:task, :ordering => 4)
+    end
+
+    it "should move other elements down when moving up" do
+      @t2.ordering = 3
+      @t2.save
+      @t1.reload.ordering.should == 0
+      @t3.reload.ordering.should == 1
+      @t4.reload.ordering.should == 2
+      @t5.reload.ordering.should == 4
+    end
+
+    it "should move other elements up when moving down" do
+      @t4.ordering = 1
+      @t4.save
+      @t1.reload.ordering.should == 0
+      @t2.reload.ordering.should == 2
+      @t3.reload.ordering.should == 3
+      @t5.reload.ordering.should == 4
+    end
+
+    it "should get a default order based on the other tasks" do
+      t = Factory(:task)
+      t.ordering.should == 5
+    end
+  end
 end
