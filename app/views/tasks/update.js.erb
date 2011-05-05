@@ -1,8 +1,8 @@
 el = $("#tasks #task_block_<%= @task.id %>");
-if(el.hasClass("completed")) {
-  el.removeClass("completed");
-  el.addClass("uncompleted");
-} else {
+<% if @task.completed? %>
   el.removeClass("uncompleted");
   el.addClass("completed");
-}
+<% else %>
+  el.removeClass("completed");
+  el.addClass("uncompleted");
+<% end %>
