@@ -1,5 +1,5 @@
 class AddOrderToTask < ActiveRecord::Migration
-  class Product < ActiveRecord::Base; end
+  class Task < ActiveRecord::Base; end
   def self.up
     add_column :tasks, :ordering, :integer
 
