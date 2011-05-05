@@ -1,11 +1,6 @@
 #tasks
   - if @tasks.any?
-    #uncompleted
-      = render 'tasks', :tasks => @tasks.select { |t| t.completed == false }
-    #completed
-      = render 'tasks', :tasks => @tasks.select { |t| t.completed == true }
+    = render 'tasks', :tasks => @tasks
     = render :partial => "no_tasks", :locals => { :hidden => true }
   - else
-    #uncompleted
-    #completed
     = render :partial => "no_tasks", :locals => { :hidden => false }

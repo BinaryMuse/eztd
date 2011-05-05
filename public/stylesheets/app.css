@@ -52,7 +52,7 @@ h1 {
   display: inline-block;
 }
 */
-#completed .task {
+.completed.task {
   color: gray;
 }
 

@@ -1,3 +1,8 @@
-$("#tasks #task_block_<%= @task.id %>").remove();
-<% content = escape_javascript render('task', :task => @task) %>
-$('<%= @task.completed? ? "#completed" : "#uncompleted" %>').append("<%= content %>");
+el = $("#tasks #task_block_<%= @task.id %>");
+if(el.hasClass("completed")) {
+  el.removeClass("completed");
+  el.addClass("uncompleted");
+} else {
+  el.removeClass("uncompleted");
+  el.addClass("completed");
+}
