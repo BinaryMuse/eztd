@@ -29,12 +29,9 @@ class Task < ActiveRecord::Base
     def check_order
       return true unless persisted?
 
-      logger.info "#{changes['ordering']}"
       if values = changes['ordering']
         old_value = values[0]
         new_value = values[1]
-        logger.info "Old value: #{old_value}"
-        logger.info "New value: #{new_value}"
 
         return if old_value == new_value # should never happen
         if new_value > old_value
